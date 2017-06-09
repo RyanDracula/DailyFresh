@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "parent.html"%}
+{%block con%}
+<head>
+	<meta charset="UTF-8">
+	<title>天天生鲜-登录</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+    <script type="text/javascript" src="/static/js/jquery-1.12.4.min.js"></script>
+    <script>
+
+        $(function () {
+{#            用户名是否为空#}
+            var empty_name = true;
+{#            密码是否为空#}
+            var empty_pwd = true;
+{#            获取输入的密码#}
+            var pwd_ob = $('.pass_input');
+{#            获取输入的用户名#}
+            var name = $('.name_input');
+{#            是否勾选了“记住用户名”#}
+            var coo = "{{ cooki }}";
+{#            接收后台返回的登录信息#}
+            var error = "{{ error }}";
+
+{#            如果勾选了“记住用户名”，自动填充用户名#}
+            console.log(coo);
+            console.log(error);
+            if (coo != "" && coo != NaN){
+                name.val(coo);
+                empty_name = false;
+            }
+
+{#            用户名和密码不匹配时，弹出错误提示#}
+            if (error == "1"){
+                name.val("{{ u_name }}");
+                pwd_ob.val("{{ u_pwd }}");
+                pwd_ob.next().html("用户名/密码不匹配，请重新输入");
+                pwd_ob.next().show();
+                empty_name = false;
+                empty_pwd = false;
+            }
+
+            name.blur(function() {
+                check_user_name();
+            });
+            name.focus(function () {
+                name.next().hide();
+            });
+            pwd_ob.blur(function () {
+                check_pwd();
+            });
+            pwd_ob.focus(function () {
+                pwd_ob.next().hide();
+            });
+
+            {# 验证用户名是否为空#}
+            function check_user_name() {
+                if (name.val().length == 0){
+                    empty_name = true;
+                    name.next().html("用户名空");
+					name.next().show();
+                }
+                else{
+{#                    用户名不为空时，验证其是否存在#}
+                    empty_name = false;
+                    $.get('/user/verify_name', {'user_name':name.val()}, function (data) {
+                    if(data.num == 1){
+                        name.next().hide();
+                    }
+                    else{
+                        name.next().html("您输入的用户名不存在，请重新输入");
+                        name.next().show();
+                    }
+                    });
+                }
+            }
+
+            function check_pwd() {
+                {# 检测密码是否为空 #}
+                if (pwd_ob.val().length == 0){
+                    empty_pwd = true;
+                    pwd_ob.next().html("密码空");
+                    pwd_ob.next().show();
+                }
+                else {
+                    empty_pwd = false;
+                }
+            }
+
+{#          点击"提交"按钮#}
+            $('#tf').submit(function () {
+                return (empty_name==false && empty_pwd==false);
+            });
+
+        })
+    </script>
+</head>
+<body>
+<div class="login_top clearfix">
+		<a href="{%url 'goods:index'%}" class="login_logo"><img src="/static/images/logo02.png"></a>
+	</div>
+
+	<div class="login_form_bg">
+		<div class="login_form_wrap clearfix">
+			<div class="login_banner fl"></div>
+			<div class="slogan fl">日夜兼程 · 急速送达</div>
+			<div class="login_form fr">
+				<div class="login_title clearfix">
+					<h1>用户登录</h1>
+					<a href="{%url 'users:register'%}">立即注册</a>
+				</div>
+				<div class="form_input">
+					<form id="tf" action="/user/go_login/" method="post">
+                        {%csrf_token%}
+                        <input type="text" name="username" class="name_input" placeholder="请输入用户名">
+						<div class="user_error">输入错误</div>
+						<input type="password" name="pwd" class="pass_input" placeholder="请输入密码">
+						<div class="pwd_error">输入错误</div>
+						<div class="more_input clearfix">
+							<input type="checkbox" name="check" value="1" checked="checked">
+							<label>记住用户名</label>
+							<a href="#">忘记密码</a>
+						</div>
+						<input type="submit" name="" value="登录" class="input_submit">
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+{%endblock con%}
+</body>
+</html>
+
+
+{# 1. 如何在页面加载前执行jquery函数#}
+{# 2. 如何更改checkbox的状态——选中/未选中#}

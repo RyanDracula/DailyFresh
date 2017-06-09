@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+<script type="text/javascript" src="/static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery-ui.min.js"></script>
+{%block head_set%}
+{%endblock head_set%}
+<script>
+    $(function () {
+        if ("{{ user_name }}" != ""){
+            $('.login_btn').hide();
+            $('.login_info em').html("{{ user_name }}");
+            $('.login_info').show();
+        }
+    });
+{#    $(function () {#}
+{#        $.get('/goods/get_uname', function (data) {#}
+{#            if (typeof data == 'object'){#}
+{#                var login_user_name = data.login_user_name;#}
+{#                if (login_user_name != "n"){#}
+{#                    $('.login_btn').hide();#}
+{#                    $('.login_info em').html(login_user_name);#}
+{#                    $('.login_info').show();#}
+{#                }#}
+{#            }#}
+{#        });#}
+{#    })#}
+</script>
+</head>
+<body>
+<div class="header_con">
+    <div class="header">
+        <div class="welcome fl">欢迎来到天天生鲜!</div>
+        <div class="fr">
+            <div class="login_info fl">
+                欢迎您： <em>张 山</em>
+                <span>|</span>
+                <a href="/user/logout/" id="logout_sys">退出</a>
+            </div>
+            <div class="login_btn fl">
+                <a href="{%url 'users:login'%}">登录</a>
+                <span>|</span>
+                <a href="{%url 'users:register'%}">注册</a>
+            </div>
+            <div class="user_link fl">
+                <span>|</span>
+                <a href="{%url 'users:user_center_site'%}">用户中心</a>
+                <span>|</span>
+                <a href="{%url 'users:cart'%}">我的购物车</a>
+                <span>|</span>
+                <a href="/user/user_center_order">我的订单</a>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="search_bar clearfix">
+		<a href="{%url 'goods:index'%}" class="logo fl"><img src="/static/images/logo.png"></a>
+		<div class="search_con fl">
+            <form method='get' action="/goods/search/" target="_blank">
+                <input type="text" class="input_text fl" name="q" placeholder="搜索商品">
+                <input type="submit" class="input_btn fr" value="搜索">
+            </form>
+		</div>
+        {% if cart_count != '' %}
+		<div class="guest_cart fr">
+			<a href="{%url 'users:cart'%}" class="cart_name fl">我的购物车</a>
+			<div class="goods_count fl" id="show_count">{{ cart_count }}</div>
+		</div>
+        {% endif %}
+	</div>
+
+{% if has_cart|default:'' == "1" %}
+	<div class="navbar_con">
+		<div class="navbar">
+			<h1 class="fl">全部商品分类</h1>
+			<ul class="navlist fl">
+				<li><a href="{%url 'goods:index'%}">首页</a></li>
+				<li class="interval">|</li>
+				<li><a href="">手机生鲜</a></li>
+				<li class="interval">|</li>
+				<li><a href="">抽奖</a></li>
+			</ul>
+		</div>
+	</div>
+
+{% else %}
+    <div class="navbar_con">
+		<div class="navbar clearfix">
+			<div class="subnav_con fl">
+				<h1>全部商品分类</h1>
+				<span></span>
+				<ul class="subnav">
+					<li><a href="lists1/1/order1" class="fruit">新鲜水果</a></li>
+					<li><a href="lists2/1/order1" class="seafood">海鲜水产</a></li>
+					<li><a href="lists3/1/order1" class="meet">猪牛羊肉</a></li>
+					<li><a href="lists4/1/order1" class="egg">禽类蛋品</a></li>
+					<li><a href="lists5/1/order1" class="vegetables">新鲜蔬菜</a></li>
+					<li><a href="lists6/1/order1" class="ice">速冻食品</a></li>
+				</ul>
+			</div>
+			<ul class="navlist fl">
+				<li><a href="{%url 'goods:index'%}">首页</a></li>
+				<li class="interval">|</li>
+				<li><a href="">手机生鲜</a></li>
+				<li class="interval">|</li>
+				<li><a href="">抽奖</a></li>
+			</ul>
+		</div>
+	</div>
+    {% block list_classify %}
+    {% endblock list_classify %}
+
+    <div class="main_wrap clearfix">
+        <div class="l_wrap fl clearfix">
+                <div class="new_goods">
+                    <h3>新品推荐</h3>
+                    <ul>
+                        {% for i in newest %}
+                            <li>
+                            <a href="/goods/detail{{ i.id }}"><img src="/static/{{ i.gpic.name }}"></a>
+                            <h4><a href="/goods/detail{{ i.id }}">{{ i.gtitle }}</a></h4>
+                            <div class="prize">{{ i.price }}</div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        {% block list_newlist %}
+        {% endblock list_newlist %}
+    </div>
+{% endif %}
+
+{%block list_content%}
+{%endblock list_content%}
+    <div class="footer no-mp">
+		<div class="foot_link">
+			<a href="#">关于我们</a>
+			<span>|</span>
+			<a href="#">联系我们</a>
+			<span>|</span>
+			<a href="#">招聘人才</a>
+			<span>|</span>
+			<a href="#">友情链接</a>
+		</div>
+		<p>CopyRight © 2016 北京天天生鲜信息技术有限公司 All Rights Reserved</p>
+		<p>电话：010-****888    京ICP备*******8号</p>
+	</div>
+</body>
+</html>

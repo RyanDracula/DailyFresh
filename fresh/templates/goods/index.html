@@ -1,0 +1,78 @@
+{% extends "index_list.html"%}
+{%block head_set%}
+	<title>天天生鲜-首页</title>
+	<script type="text/javascript" src="/static/js/slide.js"></script>
+{%endblock head_set%}
+
+{%block list_content%}
+
+	<div class="center_con clearfix">
+		<ul class="subnav fl">
+			<li><a href="lists1/1/order1" class="fruit">新鲜水果</a></li>
+			<li><a href="lists2/1/order1" class="seafood">海鲜水产</a></li>
+			<li><a href="lists3/1/order1" class="meet">猪牛羊肉</a></li>
+			<li><a href="lists4/1/order1" class="egg">禽类蛋品</a></li>
+			<li><a href="lists5/1/order1" class="vegetables">新鲜蔬菜</a></li>
+			<li><a href="lists6/1/order1" class="ice">速冻食品</a></li>
+		</ul>
+		<div class="slide fl">
+			<ul class="slide_pics">
+				<li><img src="/static/images/slide.jpg" alt="幻灯片"></li>
+				<li><img src="/static/images/slide02.jpg" alt="幻灯片"></li>
+				<li><img src="/static/images/slide03.jpg" alt="幻灯片"></li>
+				<li><img src="/static/images/slide04.jpg" alt="幻灯片"></li>
+			</ul>
+			<div class="prev"></div>
+			<div class="next"></div>
+			<ul class="points"></ul>
+		</div>
+		<div class="adv fl">
+			<a href="#"><img src="/static/images/adv01.jpg"></a>
+			<a href="#"><img src="/static/images/adv02.jpg"></a>
+		</div>
+	</div>
+    {% for j in all_list %}
+	<div class="list_model">
+		<div class="list_title clearfix">
+			<h3 class="fl" id="model0{{ j.type_id }}">{{ j.type_obj }}</h3>
+			<div class="subtitle fl">
+				{% for i in j.click_goods%}
+                    <a href="/goods/detail{{ i.id }}">{{ i.gtitle|truncatechars:15 }}</a>
+                {% endfor %}
+			</div>
+			<a href="/goods/lists{{ j.type_id }}/1/order1" class="goods_more fr" id="fruit_more">查看更多 ></a>
+		</div>
+
+		<div class="goods_con clearfix">
+			<div class="goods_banner fl"><img src="/static/images/banner0{{ j.type_id }}.jpg"></div>
+			<ul class="goods_list fl">
+                    {% for i in j.default_order %}
+                        <li>
+                            <h4><a href="/goods/detail{{ i.id }}">{{ i.gtitle }}</a></h4>
+                            <a href="/goods/detail{{ i.id }}"><img src="/static/{{ i.gpic.name }}"></a>
+                            <div class="prize">¥ {{ i.gprice }}</div>
+                        </li>
+                    {% endfor %}
+			</ul>
+		</div>
+	</div>
+    {% endfor %}
+
+{#<script type="text/javascript" src="/static/js/slideshow.js"></script>#}
+{#<script type="text/javascript">#}
+{#    BCSlideshow('focuspic');#}
+{#    var oFruit = document.getElementById('fruit_more');#}
+{#    var oShownum = document.getElementById('show_count');#}
+{##}
+{#    var hasorder = localStorage.getItem('order_finish');#}
+{##}
+{#    if(hasorder)#}
+{#    {#}
+{#        oShownum.innerHTML = '2';#}
+{#    }#}
+{##}
+{#    oFruit.onclick = function(){#}
+{#        window.location.href = 'list.html';#}
+{#    }#}
+{#</script>#}
+{%endblock list_content%}

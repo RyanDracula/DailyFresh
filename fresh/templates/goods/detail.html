@@ -1,0 +1,146 @@
+{% extends "index_list.html"%}
+{%block head_set%}
+    <title>天天生鲜-商品详情</title>
+    <script>
+    $(function () {
+        var num_show = $('.num_show');
+        var value = num_show.val();
+{#        当总价/数量失去焦点时，或点击+,-号时，都要对总价进行计算#}
+        $('.total em').blur(function () {
+            count_prices();
+        });
+        num_show.blur(function () {
+            if (typeof Number(value) === 'number' && value%1 === 0 && value >= 1){
+            }
+            else{
+                num_show.val(1);
+            }
+            count_prices();
+        });
+        $('.minus').click(function () {
+            if (value <= 1){
+                num_show.val(1);
+            }
+            else{
+                num_show.val(parseInt(value) - 1);
+            }
+            count_prices();
+        });
+        $('.add').click(function () {
+            if (value >= parseInt({{ goodsInfo.gkucun }})){
+                num_show.val(parseInt({{ goodsInfo.gkucun }}));
+            }
+            else{
+                num_show.val(parseInt(value) + 1);
+            }
+            count_prices();
+        });
+    });
+    function count_prices() {
+{#        数量#}
+        var num = $('.num_show');
+{#        单价#}
+        var price = $('.show_pirze em');
+{#        总价#}
+        var total = $('.total em');
+        if (num.val() <= 1){
+            num.val(1);
+        }
+        if (num.val() >= parseInt({{ goodsInfo.gkucun }})){
+            num.val(parseInt({{ goodsInfo.gkucun }}));
+        }
+{#        计算总价，并保留两位小数#}
+        total.val((parseInt(num.val()) * parseFloat(price.html())).toFixed(2));
+        total.html((parseInt(num.val()) * parseFloat(price.html())).toFixed(2));
+    }
+    </script>
+{%endblock head_set%}
+
+    {% block list_classify %}
+	<div class="breadcrumb">
+		<a href="/">全部分类</a>
+		<span>></span>
+		<a href="/goods/lists{{ typeobj.id }}/1/order1">{{ typeobj.title }}</a>
+		<span>>  商品详情</span>
+	</div>
+	<div class="goods_detail_con clearfix">
+		<div class="goods_detail_pic fl"><img src="/static/{{ goodsInfo.gpic }}"></div>
+
+		<div class="goods_detail_list fr">
+			<h3>{{ goodsInfo.gtitle }}</h3>
+			<p>{{ goodsInfo.gjianjie }}</p>
+			<div class="prize_bar">
+				<span class="show_pirze">¥<em>{{ goodsInfo.gprice }}</em></span>
+				<span class="show_unit">单  位：500g</span>
+			</div>
+			<div class="goods_num clearfix">
+				<div class="num_name fl">数 量：</div>
+				<div class="num_add fl">
+					<input type="text" class="num_show fl" value="1">
+					<a href="javascript:;" class="add fr">+</a>
+					<a href="javascript:;" class="minus fr">-</a>
+				</div>
+			</div>
+			<div class="total">总价：<em>{{ goodsInfo.gprice }}</em>元</div>
+			<div class="operate_btn">
+				<a href="javascript:;" class="buy_btn">立即购买</a>
+				<a href="javascript:;" class="add_cart" id="add_cart">加入购物车</a>
+			</div>
+		</div>
+	</div>
+    {% endblock list_classify %}
+
+    {% block list_newlist %}
+		<div class="r_wrap fr clearfix">
+			<ul class="detail_tab clearfix">
+				<li class="active">商品介绍</li>
+				<li>评论</li>
+			</ul>
+
+			<div class="tab_content">
+				<dl>
+					<dt>商品详情：</dt>
+					<dd>{{ goodsInfo.gcontent|safe }}</dd>
+				</dl>
+			</div>
+
+		</div>
+    {% endblock list_newlist %}
+
+    {%block list_content%}
+    <div class="add_jump"></div>
+
+	<script type="text/javascript">
+		var $add_x = $('#add_cart').offset().top;
+		var $add_y = $('#add_cart').offset().left;
+
+		var $to_x = $('#show_count').offset().top;
+		var $to_y = $('#show_count').offset().left;
+
+
+		$('#add_cart').click(function(){
+		    var count = $('.num_show').val();
+{#		    动画开始前，就发送ajax请求，看是否在登录状态（未登录时转到登录页面）#}
+            $.get('/goods/get_uname', function (data) {
+                if (data['login_user_name'] != ""){
+                    $(".add_jump").css({'left':$add_y+80,'top':$add_x+10,'display':'block'}).stop().animate(
+                        {'left': $to_y+7,
+                        'top': $to_x+7},
+                        "fast", function() {
+                            $(".add_jump").fadeOut('fast',function(){
+{#                                将此商品添加入购物车#}
+                                $.get('/user/add_cart{{ goodsInfo.id }}/'+count, function (mess) {
+{#                                显示此用户购物车的总数量#}
+                                    $('#show_count').html(mess['goods_count']);
+                                });
+                            });
+                    });
+                }
+                else{
+                    window.location.href = "/user/login.html";
+                }
+            });
+
+		})
+	</script>
+    {%endblock list_content%}

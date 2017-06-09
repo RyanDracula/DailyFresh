@@ -1,0 +1,60 @@
+{% extends "index_list.html"%}
+{%block head_set%}
+    <title>天天生鲜-商品列表</title>
+{%endblock head_set%}
+
+{% block list_classify %}
+    <div class="breadcrumb">
+		<a href="/">全部分类</a>
+		<span>></span>
+		<a href="/goods/lists{{ tid }}/1/order1">{{type_obj}}</a>
+	</div>
+{% endblock list_classify %}
+
+{% block list_newlist %}
+		<div class="r_wrap fr clearfix">
+			<div class="sort_bar">
+				<a href="/goods/lists{{ tid }}/1/order1" {% if orderby == 'order1' %} class='active' {% endif %}>默认</a>
+				<a href="/goods/lists{{ tid }}/1/order2" {% if orderby == 'order2' %} class='active' {% endif %}>价格</a>
+				<a href="/goods/lists{{ tid }}/1/order3" {% if orderby == 'order3' %} class='active' {% endif %}>人气</a>
+			</div>
+
+			<ul class="goods_type_list clearfix">
+                {% for i in page1 %}
+				<li>
+					<a href="/goods/detail{{ i.id }}"><img src="/static/{{ i.gpic.name }}"></a>
+					<h4><a href="/goods/detail{{ i.id }}">{{ i.gtitle }}</a></h4>
+					<div class="operate">
+						<span class="prize">{{ i.gprice }}</span>
+						<span class="unit">{{ i.gprice }}/{{ i.gunit }}</span>
+						<a href="/user/add_cart{{ i.id }}/1" class="add_goods" title="加入购物车" ></a>
+					</div>
+				</li>
+                {% endfor %}
+
+			</ul>
+
+        <div class="pagenation">
+{#       如果存在“上一页”，则显示#}
+        {% if page1.has_previous %}
+            <a href="/goods/lists{{ tid }}/{{ page_id|add:-1 }}/{{ orderby }}">上一页></a>
+        {% endif %}
+
+        {% for i in plist %}
+{#               如果是本页，则使用标签“active”激活#}
+            {% if i == page_id %}
+                <a href="/goods/lists{{ tid }}/{{ page_id }}/{{ orderby }}" class="active">{{ page_id }}</a>
+            {% else %}
+            <a href="/goods/lists{{ tid }}/{{ i }}/{{ orderby }}">{{ i }}</a>
+            {% endif %}
+        {% endfor %}
+
+{#       如果存在“下一页”，则显示 #}
+        {% if page1.has_next %}
+            <a href="/goods/lists{{ tid }}/{{ page_id|add:1 }}/{{ orderby }}">下一页></a>
+        {% endif %}
+		</div>
+		</div>
+	</div>
+
+{% endblock list_newlist %}

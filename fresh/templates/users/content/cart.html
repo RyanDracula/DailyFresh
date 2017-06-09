@@ -1,0 +1,139 @@
+{% extends "index_head.html"%}
+{%block head_set%}
+    <title>天天生鲜-购物车</title>
+    <script>
+{#实现思路#}
+{##}
+{#1.当点击进入界面，刷新的时候触发body内的onload=""方法，跳转到JS代码。这样做的原因是在数据库内我们只会存储某客户的准备购买的商品件数，#}
+{#    而不会存储每类商品价格的小计和购物车内所有物品的商品总价格，初始化的目的就是为将这些数字计算出来后显示在前台界面上。#}
+{##}
+{#2.当更改数量输入框中每个商品的数量时，整个购物表商品的价格，商品的小计和总计会根据数量发生变化。#}
+
+    function calc() {
+        var totalPrice = 0;
+        var count_num = 0;
+        {#        遍历所有商品集合#}
+        $('.cart_list_td').each(function () {
+            var num = $(this).find('.num_show').val();
+            var price = $(this).children('.col05');
+            var col07 = $(this).children('.col07');
+            {#        计算小计#}
+            var smallTotal = (parseInt(num) * parseFloat(price.text())).toFixed(2);
+            col07.text(smallTotal);
+            {#          计算被选中的商品的总价#}
+            if ($(this).children('.col01').children('input').prop('checked')) {
+                count_num = count_num + 1;
+                totalPrice = (parseFloat(totalPrice) + parseFloat(col07.text())).toFixed(2);
+            }
+        });
+        $('.settlements .col03 em').text(totalPrice);
+        $('.settlements .col03 b').text(count_num);
+    }
+
+    $(function () {
+
+        {#      刚进入页面，就开始计算所有的价格 #}
+        calc();
+
+        $('#CheckedAll').click(function () {
+            $(':checkbox:not(#check_all)').prop('checked', $(this).prop('checked'));
+        });
+
+        {#        当页面上商品的checkbox全部选中时，自动选中“全选”；只要有一个不被选中，“全选”就不勾选#}
+        {#        除全选框之外，其余框被change时都触发函数#}
+        $(':checkbox:not(#CheckedAll)').change(function () {
+            calc();
+            {#            如果所有(除全选框外)checkbox都被选中#}
+            if ($(':checkbox:not(#CheckedAll)').length === $(':checked:not(#CheckedAll)').length) {
+                $('#CheckedAll').prop('checked', true);
+            } else {
+                $('#checkedall').prop('checked', false);
+            }
+        });
+
+        {#        注意下面blur()的用法，blur()中的$(this)是$('.num_show')标签； 在$('.add')调用blur()时，取到的也是$('.num_show')标签#}
+        $('.add').click(function () {
+            var oldNum = parseInt($(this).next().val());
+            $(this).next().val(oldNum + 1).blur();
+        });
+
+        $('.minus').click(function () {
+            var oldNum = parseInt($(this).prev().val());
+            $(this).prev().val(oldNum - 1).blur();
+        });
+
+        $('.num_show').blur(function () {
+            var goodsID = $(this).siblings('#show_goodsID').val();
+            var count = parseInt($(this).val());
+            var kucun = parseInt($(this).parent().parent().prevAll('.col03').children('b').text());
+            $(this).val(parseInt($(this).val()));
+            {#            不能大于库存#}
+            if (count > kucun) {
+                $(this).val(kucun);
+            }
+            {#            不能小于１#}
+            if (count <= 1) {
+                $(this).val(1);
+            }
+            {#            提交数据库修改#}
+            {#            $.get中的回调函数是一段封闭的函数域，$(this)不起作用，需要将其保存到变量中#}
+            var othis = $(this);
+            $.get('/user/add_minus', {'goodsID': goodsID, 'count': count}, function (data) {
+                if (data['success'] === 'yes') {
+                    othis.val(data['count']); // １　回调函数在服务器回复后才能执行。
+                    calc();
+                }
+            });
+            // calc(); ２　此处的代码比1处的代码更先执行，因为$.get将发送给服务器后，开始执行２。
+        });
+    })
+    </script>
+{%endblock head_set%}
+
+{%block list_content%}
+<div class="total_count">全部商品<em>{{ my_goods.count }}</em>件</div>
+	<ul class="cart_list_th clearfix">
+		<li class="col01">商品名称</li>
+		<li class="col02">商品单位</li>
+		<li class="col03">商品价格</li>
+		<li class="col04">数量</li>
+		<li class="col05">小计</li>
+		<li class="col06">操作</li>
+	</ul>
+{#    form表单内所有带name=""的标签的value都会被传递给后台接收。同名name传递时，后台可用列表接收#}
+<form method="get" action="/order/place_order">
+    {% for i in my_goods %}
+	<ul class="cart_list_td clearfix" id="{{ i.id }}">
+        <input type="hidden" value="{{ i.id }}">
+		<li class="col01"><input type="checkbox" checked="checked" id="CheckOne" name="cart_id" value="{{ i.id }}"></li>
+		<li class="col02"><img src="/static/{{ i.goods_id.gpic.name }}"></li>
+		<li class="col03">{{ i.goods_id.gtitle }}<br><em>{{ i.goods_id.gprice }}元/500g </em><em> 库存：</em><b>{{ i.goods_id.gkucun }}</b></li>
+		<li class="col04">500g</li>
+		<li class="col05">{{ i.goods_id.gprice }}</li>
+		<li class="col06">
+			<div class="num_add">
+                <input id="show_goodsID" style="display: none" value="{{ i.goods_id.id }}"></input>
+				<a href="javascript:;" class="add fl">+</a>
+				<input type="text" class="num_show fl" value="{{ i.count }}" id="num_show">
+				<a href="javascript:;" class="minus fl">-</a>
+			</div>
+		</li>
+		<li class="col07"></li>
+		<li class="col08"><a href="javascript:;">删除</a></li>
+	</ul>
+    {% empty %}
+    {% endfor %}
+
+	<ul class="settlements">
+		<li class="col01"><input type="checkbox" checked="checked" id="CheckedAll"></li>
+		<li class="col02">全选</li>
+		<li class="col03">合计(不含运费)：
+            <span>¥</span>
+            <em></em>
+            <br>共计<b></b>件商品</li>
+		<li class="col04"><input type="submit" value="去结算"></li>
+	</ul>
+    </form>
+
+{%endblock list_content%}
+
