@@ -27,13 +27,13 @@
 {#            如果勾选了“记住用户名”，自动填充用户名#}
             console.log(coo);
             console.log(error);
-            if (coo != "" && coo != NaN){
+            if (coo !== ""){
                 name.val(coo);
                 empty_name = false;
             }
 
 {#            用户名和密码不匹配时，弹出错误提示#}
-            if (error == "1"){
+            if (error === "1"){
                 name.val("{{ u_name }}");
                 pwd_ob.val("{{ u_pwd }}");
                 pwd_ob.next().html("用户名/密码不匹配，请重新输入");
@@ -57,7 +57,7 @@
 
             {# 验证用户名是否为空#}
             function check_user_name() {
-                if (name.val().length == 0){
+                if (name.val().length === 0){
                     empty_name = true;
                     name.next().html("用户名空");
 					name.next().show();

@@ -411,3 +411,417 @@ liyan
 liyan
 [pid: 5690|app: 0|req: 5/54] 127.0.0.1 () {44 vars in 903 bytes} [Fri Jun  9 16:34:52 2017] GET /user/user_center_order => generated 7317 bytes in 23 msecs (HTTP/1.1 200) 4 headers in 154 bytes (1 switches on core 0)
 [pid: 5691|app: 0|req: 8/55] 127.0.0.1 () {44 vars in 915 bytes} [Fri Jun  9 16:44:45 2017] GET /goods/index.html => generated 17252 bytes in 58 msecs (HTTP/1.1 200) 4 headers in 148 bytes (1 switches on core 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Sat Jun 10 16:52:15 2017] ***
+compiled with version: 4.8.4 on 09 June 2017 11:43:53
+os: Linux-4.4.0-31-generic #50~14.04.1-Ubuntu SMP Wed Jul 13 01:07:32 UTC 2016
+nodename: liyan-TM1613
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/liyan/DailyFresh/fresh
+writing pidfile to uwsgi.pid
+detected binary path: /home/liyan/.virtualenvs/dailyFresh/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/liyan/DailyFresh/fresh
+your processes number limit is 31164
+your memory page size is 4096 bytes
+detected max file descriptor number: 4096
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8080 fd 3
+Python version: 2.7.6 (default, Oct 26 2016, 20:33:43)  [GCC 4.8.4]
+Python main interpreter initialized at 0x11371d0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415280 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x11371d0 pid: 5921 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 5921)
+spawned uWSGI worker 1 (pid: 5924, cores: 2)
+spawned uWSGI worker 2 (pid: 5925, cores: 2)
+spawned uWSGI worker 3 (pid: 5927, cores: 2)
+spawned uWSGI worker 4 (pid: 5929, cores: 2)
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+[pid: 5927|app: 0|req: 1/1] 127.0.0.1 () {42 vars in 775 bytes} [Sat Jun 10 17:12:42 2017] GET / => generated 17252 bytes in 150 msecs (HTTP/1.1 200) 4 headers in 132 bytes (1 switches on core 1)
+[pid: 5929|app: 0|req: 1/2] 127.0.0.1 () {42 vars in 738 bytes} [Sat Jun 10 17:12:42 2017] GET /favicon.ico => generated 85 bytes in 88 msecs (HTTP/1.1 404) 3 headers in 121 bytes (1 switches on core 0)
+[pid: 5929|app: 0|req: 2/3] 127.0.0.1 () {44 vars in 860 bytes} [Sat Jun 10 17:12:52 2017] GET /user/user_center_site.html => generated 5407 bytes in 44 msecs (HTTP/1.1 200) 5 headers in 280 bytes (1 switches on core 1)
+[pid: 5929|app: 0|req: 3/4] 127.0.0.1 () {44 vars in 873 bytes} [Sat Jun 10 17:14:03 2017] GET /user/user_center_site.html => generated 5404 bytes in 13 msecs (HTTP/1.1 200) 5 headers in 280 bytes (1 switches on core 0)
+[pid: 5927|app: 0|req: 2/5] 127.0.0.1 () {52 vars in 1050 bytes} [Sat Jun 10 17:14:11 2017] POST /user/get_site/ => generated 0 bytes in 28 msecs (HTTP/1.1 302) 5 headers in 204 bytes (1 switches on core 0)
+[pid: 5927|app: 0|req: 3/6] 127.0.0.1 () {46 vars in 920 bytes} [Sat Jun 10 17:14:11 2017] GET /user/user_center_site.html => generated 5431 bytes in 14 msecs (HTTP/1.1 200) 5 headers in 280 bytes (1 switches on core 1)
+[pid: 5925|app: 0|req: 1/7] 127.0.0.1 () {44 vars in 873 bytes} [Sat Jun 10 17:15:36 2017] GET /user/user_center_site.html => generated 5352 bytes in 145 msecs (HTTP/1.1 200) 5 headers in 280 bytes (1 switches on core 0)
+[pid: 5929|app: 0|req: 4/8] 127.0.0.1 () {52 vars in 1050 bytes} [Sat Jun 10 17:17:22 2017] POST /user/get_site/ => generated 0 bytes in 15 msecs (HTTP/1.1 302) 5 headers in 204 bytes (1 switches on core 1)
+[pid: 5929|app: 0|req: 5/9] 127.0.0.1 () {46 vars in 920 bytes} [Sat Jun 10 17:17:22 2017] GET /user/user_center_site.html => generated 5201 bytes in 7 msecs (HTTP/1.1 200) 5 headers in 280 bytes (1 switches on core 0)
+[pid: 5929|app: 0|req: 6/10] 127.0.0.1 () {52 vars in 1050 bytes} [Sat Jun 10 17:17:37 2017] POST /user/get_site/ => generated 0 bytes in 29 msecs (HTTP/1.1 302) 5 headers in 204 bytes (1 switches on core 1)
+[pid: 5929|app: 0|req: 7/11] 127.0.0.1 () {46 vars in 920 bytes} [Sat Jun 10 17:17:37 2017] GET /user/user_center_site.html => generated 5201 bytes in 13 msecs (HTTP/1.1 200) 5 headers in 280 bytes (1 switches on core 0)
+[pid: 5929|app: 0|req: 8/12] 127.0.0.1 () {44 vars in 873 bytes} [Sat Jun 10 17:24:27 2017] GET /user/user_center_site.html => generated 5074 bytes in 15 msecs (HTTP/1.1 200) 5 headers in 280 bytes (1 switches on core 1)
+[pid: 5929|app: 0|req: 9/13] 127.0.0.1 () {52 vars in 1050 bytes} [Sat Jun 10 17:24:38 2017] POST /user/get_site/ => generated 0 bytes in 31 msecs (HTTP/1.1 302) 5 headers in 204 bytes (1 switches on core 0)
+[pid: 5929|app: 0|req: 10/14] 127.0.0.1 () {46 vars in 920 bytes} [Sat Jun 10 17:24:38 2017] GET /user/user_center_site.html => generated 5074 bytes in 11 msecs (HTTP/1.1 200) 5 headers in 280 bytes (1 switches on core 1)
+[pid: 5929|app: 0|req: 11/15] 127.0.0.1 () {52 vars in 1050 bytes} [Sat Jun 10 17:24:54 2017] POST /user/get_site/ => generated 0 bytes in 19 msecs (HTTP/1.1 302) 5 headers in 204 bytes (1 switches on core 0)
+[pid: 5927|app: 0|req: 4/16] 127.0.0.1 () {46 vars in 920 bytes} [Sat Jun 10 17:24:54 2017] GET /user/user_center_site.html => generated 5074 bytes in 16 msecs (HTTP/1.1 200) 5 headers in 280 bytes (1 switches on core 0)
+...brutally killing workers...
+worker 2 buried after 0 seconds
+worker 3 buried after 0 seconds
+worker 1 buried after 1 seconds
+worker 4 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/liyan/DailyFresh/fresh
+closing all non-uwsgi socket fds > 2 (max_fd = 4096)...
+found fd 3 mapped to socket 0 (127.0.0.1:8080)
+running /home/liyan/.virtualenvs/dailyFresh/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.15 (64bit) on [Sat Jun 10 17:28:38 2017] ***
+compiled with version: 4.8.4 on 09 June 2017 11:43:53
+os: Linux-4.4.0-31-generic #50~14.04.1-Ubuntu SMP Wed Jul 13 01:07:32 UTC 2016
+nodename: liyan-TM1613
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/liyan/DailyFresh/fresh
+detected binary path: /home/liyan/.virtualenvs/dailyFresh/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/liyan/DailyFresh/fresh
+your processes number limit is 31164
+your memory page size is 4096 bytes
+detected max file descriptor number: 4096
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 127.0.0.1:8080 fd 3
+Python version: 2.7.6 (default, Oct 26 2016, 20:33:43)  [GCC 4.8.4]
+Python main interpreter initialized at 0x1010b70
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415280 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1010b70 pid: 5921 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 5921)
+spawned uWSGI worker 1 (pid: 7622, cores: 2)
+spawned uWSGI worker 2 (pid: 7623, cores: 2)
+spawned uWSGI worker 3 (pid: 7625, cores: 2)
+spawned uWSGI worker 4 (pid: 7627, cores: 2)
+*** Starting uWSGI 2.0.15 (64bit) on [Sat Jun 10 18:20:54 2017] ***
+compiled with version: 4.8.4 on 09 June 2017 11:43:53
+os: Linux-4.4.0-31-generic #50~14.04.1-Ubuntu SMP Wed Jul 13 01:07:32 UTC 2016
+nodename: liyan-TM1613
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/liyan/DailyFresh/fresh
+writing pidfile to uwsgi.pid
+detected binary path: /home/liyan/.virtualenvs/dailyFresh/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/liyan/DailyFresh/fresh
+your processes number limit is 31164
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8080 fd 3
+Python version: 2.7.6 (default, Oct 26 2016, 20:33:43)  [GCC 4.8.4]
+Python main interpreter initialized at 0x101efd0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415280 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x101efd0 pid: 3080 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 3080)
+spawned uWSGI worker 1 (pid: 3083, cores: 2)
+spawned uWSGI worker 2 (pid: 3084, cores: 2)
+spawned uWSGI worker 3 (pid: 3086, cores: 2)
+spawned uWSGI worker 4 (pid: 3087, cores: 2)
+[pid: 3086|app: 0|req: 1/1] 127.0.0.1 () {42 vars in 755 bytes} [Sat Jun 10 18:21:00 2017] GET / => generated 17252 bytes in 171 msecs (HTTP/1.1 200) 4 headers in 132 bytes (1 switches on core 0)
+[pid: 3086|app: 0|req: 2/2] 127.0.0.1 () {42 vars in 738 bytes} [Sat Jun 10 18:21:00 2017] GET /favicon.ico => generated 85 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 121 bytes (1 switches on core 1)
+[pid: 3087|app: 0|req: 1/3] 127.0.0.1 () {44 vars in 836 bytes} [Sat Jun 10 18:38:38 2017] GET /goods/detail30 => generated 10253 bytes in 218 msecs (HTTP/1.1 200) 5 headers in 183 bytes (1 switches on core 0)
+[pid: 3087|app: 0|req: 2/4] 127.0.0.1 () {44 vars in 853 bytes} [Sat Jun 10 18:38:51 2017] GET /goods/detail30 => generated 10253 bytes in 37 msecs (HTTP/1.1 200) 5 headers in 183 bytes (1 switches on core 1)
+[pid: 3087|app: 0|req: 3/5] 127.0.0.1 () {42 vars in 794 bytes} [Sat Jun 10 18:38:55 2017] GET / => generated 17252 bytes in 58 msecs (HTTP/1.1 200) 4 headers in 132 bytes (1 switches on core 0)
+[pid: 3084|app: 0|req: 1/6] 127.0.0.1 () {44 vars in 841 bytes} [Sat Jun 10 18:38:56 2017] GET /goods/detail27 => generated 10478 bytes in 198 msecs (HTTP/1.1 200) 5 headers in 191 bytes (1 switches on core 0)
+[pid: 3087|app: 0|req: 4/7] 127.0.0.1 () {44 vars in 861 bytes} [Sat Jun 10 18:45:02 2017] GET /goods/detail27 => generated 10478 bytes in 25 msecs (HTTP/1.1 200) 5 headers in 191 bytes (1 switches on core 1)
+[pid: 3087|app: 0|req: 5/8] 127.0.0.1 () {44 vars in 881 bytes} [Sat Jun 10 18:46:58 2017] GET /goods/index.html => generated 17252 bytes in 100 msecs (HTTP/1.1 200) 4 headers in 148 bytes (1 switches on core 0)
+[pid: 3083|app: 0|req: 1/9] 127.0.0.1 () {44 vars in 881 bytes} [Sat Jun 10 18:47:01 2017] GET /goods/detail59 => generated 10999 bytes in 178 msecs (HTTP/1.1 200) 5 headers in 197 bytes (1 switches on core 0)
+[pid: 3087|app: 0|req: 6/10] 127.0.0.1 () {44 vars in 867 bytes} [Sat Jun 10 18:49:05 2017] GET /goods/detail59 => generated 11128 bytes in 36 msecs (HTTP/1.1 200) 5 headers in 197 bytes (1 switches on core 1)
+[pid: 3086|app: 0|req: 3/11] 127.0.0.1 () {44 vars in 867 bytes} [Sat Jun 10 18:50:53 2017] GET /goods/detail59 => generated 11144 bytes in 45 msecs (HTTP/1.1 200) 5 headers in 197 bytes (1 switches on core 0)
+[pid: 3086|app: 0|req: 4/12] 127.0.0.1 () {44 vars in 867 bytes} [Sat Jun 10 18:51:23 2017] GET /goods/detail59 => generated 11010 bytes in 25 msecs (HTTP/1.1 200) 5 headers in 197 bytes (1 switches on core 1)
+[pid: 3084|app: 0|req: 2/13] 127.0.0.1 () {44 vars in 867 bytes} [Sat Jun 10 18:51:24 2017] GET /goods/detail59 => generated 11010 bytes in 22 msecs (HTTP/1.1 200) 5 headers in 197 bytes (1 switches on core 1)
+[pid: 3083|app: 0|req: 2/14] 127.0.0.1 () {44 vars in 867 bytes} [Sat Jun 10 18:52:10 2017] GET /goods/detail59 => generated 11028 bytes in 42 msecs (HTTP/1.1 200) 5 headers in 197 bytes (1 switches on core 1)
+[pid: 3087|app: 0|req: 7/15] 127.0.0.1 () {44 vars in 867 bytes} [Sat Jun 10 18:54:40 2017] GET /goods/detail59 => generated 10556 bytes in 23 msecs (HTTP/1.1 200) 5 headers in 197 bytes (1 switches on core 0)
+[pid: 3087|app: 0|req: 8/16] 127.0.0.1 () {44 vars in 867 bytes} [Sat Jun 10 18:54:47 2017] GET /goods/detail59 => generated 10556 bytes in 23 msecs (HTTP/1.1 200) 5 headers in 197 bytes (1 switches on core 1)
+[pid: 3084|app: 0|req: 3/17] 127.0.0.1 () {44 vars in 867 bytes} [Sat Jun 10 18:55:31 2017] GET /goods/detail59 => generated 10650 bytes in 38 msecs (HTTP/1.1 200) 5 headers in 197 bytes (1 switches on core 0)
+[pid: 3083|app: 0|req: 3/18] 127.0.0.1 () {44 vars in 867 bytes} [Sat Jun 10 18:55:33 2017] GET /goods/detail59 => generated 10650 bytes in 26 msecs (HTTP/1.1 200) 5 headers in 197 bytes (1 switches on core 0)
+[pid: 3087|app: 0|req: 9/19] 127.0.0.1 () {44 vars in 867 bytes} [Sat Jun 10 18:57:05 2017] GET /goods/detail59 => generated 10642 bytes in 25 msecs (HTTP/1.1 200) 5 headers in 197 bytes (1 switches on core 0)
+[pid: 3087|app: 0|req: 10/20] 127.0.0.1 () {44 vars in 867 bytes} [Sat Jun 10 18:57:06 2017] GET /goods/detail59 => generated 10642 bytes in 50 msecs (HTTP/1.1 200) 5 headers in 197 bytes (1 switches on core 1)
+[pid: 3086|app: 0|req: 5/21] 127.0.0.1 () {44 vars in 867 bytes} [Sat Jun 10 18:58:24 2017] GET /goods/detail59 => generated 10626 bytes in 59 msecs (HTTP/1.1 200) 5 headers in 197 bytes (1 switches on core 0)
+[pid: 3087|app: 0|req: 11/22] 127.0.0.1 () {44 vars in 867 bytes} [Sat Jun 10 19:04:03 2017] GET /goods/detail59 => generated 10755 bytes in 25 msecs (HTTP/1.1 200) 5 headers in 197 bytes (1 switches on core 0)
+[pid: 3087|app: 0|req: 12/23] 127.0.0.1 () {44 vars in 867 bytes} [Sat Jun 10 19:04:07 2017] GET /goods/detail59 => generated 10755 bytes in 26 msecs (HTTP/1.1 200) 5 headers in 197 bytes (1 switches on core 1)
+[pid: 3086|app: 0|req: 6/24] 127.0.0.1 () {44 vars in 818 bytes} [Sat Jun 10 19:04:23 2017] GET /goods/get_uname => generated 28 bytes in 8 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 1)
+[pid: 3084|app: 0|req: 4/25] 127.0.0.1 () {44 vars in 822 bytes} [Sat Jun 10 19:04:23 2017] GET /user/add_cart59/1 => generated 18 bytes in 36 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 1)
+[pid: 3086|app: 0|req: 7/26] 127.0.0.1 () {44 vars in 885 bytes} [Sat Jun 10 19:04:28 2017] GET /user/cart.html/ => generated 10872 bytes in 30 msecs (HTTP/1.1 200) 4 headers in 147 bytes (1 switches on core 0)
+[pid: 3083|app: 0|req: 4/27] 127.0.0.1 () {42 vars in 837 bytes} [Sat Jun 10 19:04:32 2017] GET /goods/detail59 => generated 10755 bytes in 35 msecs (HTTP/1.1 200) 5 headers in 197 bytes (1 switches on core 1)
+[pid: 3084|app: 0|req: 5/28] 127.0.0.1 () {44 vars in 867 bytes} [Sat Jun 10 19:04:34 2017] GET /goods/detail59 => generated 10755 bytes in 61 msecs (HTTP/1.1 200) 5 headers in 197 bytes (1 switches on core 0)
+[pid: 3086|app: 0|req: 8/29] 127.0.0.1 () {44 vars in 867 bytes} [Sat Jun 10 19:08:53 2017] GET /goods/detail59 => generated 10755 bytes in 27 msecs (HTTP/1.1 200) 5 headers in 197 bytes (1 switches on core 1)
+[pid: 3086|app: 0|req: 9/30] 127.0.0.1 () {44 vars in 867 bytes} [Sat Jun 10 19:10:12 2017] GET /goods/detail59 => generated 10628 bytes in 23 msecs (HTTP/1.1 200) 5 headers in 197 bytes (1 switches on core 0)
+[pid: 3086|app: 0|req: 10/31] 127.0.0.1 () {44 vars in 867 bytes} [Sat Jun 10 19:10:18 2017] GET /goods/detail59 => generated 10628 bytes in 48 msecs (HTTP/1.1 200) 5 headers in 197 bytes (1 switches on core 1)
+[pid: 3087|app: 0|req: 13/32] 127.0.0.1 () {44 vars in 887 bytes} [Sat Jun 10 19:11:16 2017] GET /goods/index.html => generated 17252 bytes in 112 msecs (HTTP/1.1 200) 4 headers in 148 bytes (1 switches on core 0)
+[pid: 3087|app: 0|req: 14/33] 127.0.0.1 () {44 vars in 887 bytes} [Sat Jun 10 19:11:18 2017] GET /goods/detail29 => generated 10586 bytes in 82 msecs (HTTP/1.1 200) 5 headers in 203 bytes (1 switches on core 1)
+[pid: 3083|app: 0|req: 5/34] 127.0.0.1 () {44 vars in 873 bytes} [Sat Jun 10 19:11:54 2017] GET /goods/detail29 => generated 10585 bytes in 25 msecs (HTTP/1.1 200) 5 headers in 203 bytes (1 switches on core 0)
+[pid: 3087|app: 0|req: 15/35] 127.0.0.1 () {44 vars in 824 bytes} [Sat Jun 10 19:12:20 2017] GET /goods/get_uname => generated 28 bytes in 11 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 0)
+[pid: 3083|app: 0|req: 6/36] 127.0.0.1 () {44 vars in 830 bytes} [Sat Jun 10 19:12:21 2017] GET /user/add_cart29/10 => generated 18 bytes in 40 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 1)
+[pid: 3087|app: 0|req: 16/37] 127.0.0.1 () {44 vars in 891 bytes} [Sat Jun 10 19:12:22 2017] GET /user/cart.html/ => generated 11732 bytes in 40 msecs (HTTP/1.1 200) 4 headers in 147 bytes (1 switches on core 1)
+[pid: 3084|app: 0|req: 6/38] 127.0.0.1 () {44 vars in 895 bytes} [Sat Jun 10 19:12:25 2017] GET /goods/index.html => generated 17252 bytes in 96 msecs (HTTP/1.1 200) 4 headers in 148 bytes (1 switches on core 1)
+[pid: 3083|app: 0|req: 7/39] 127.0.0.1 () {44 vars in 893 bytes} [Sat Jun 10 19:13:14 2017] GET /goods/detail30 => generated 9881 bytes in 98 msecs (HTTP/1.1 200) 5 headers in 203 bytes (1 switches on core 0)
+[pid: 3084|app: 0|req: 7/40] 127.0.0.1 () {44 vars in 873 bytes} [Sat Jun 10 19:13:48 2017] GET /goods/detail30 => generated 9881 bytes in 50 msecs (HTTP/1.1 200) 5 headers in 203 bytes (1 switches on core 0)
+[pid: 3084|app: 0|req: 8/41] 127.0.0.1 () {44 vars in 873 bytes} [Sat Jun 10 20:30:35 2017] GET /goods/detail30 => generated 9881 bytes in 24 msecs (HTTP/1.1 200) 5 headers in 203 bytes (1 switches on core 1)
+[pid: 3086|app: 0|req: 11/42] 127.0.0.1 () {44 vars in 885 bytes} [Sat Jun 10 20:30:37 2017] GET /user/logout/ => generated 0 bytes in 31 msecs (HTTP/1.1 302) 5 headers in 281 bytes (1 switches on core 0)
+[pid: 3087|app: 0|req: 17/43] 127.0.0.1 () {44 vars in 893 bytes} [Sat Jun 10 20:30:37 2017] GET /goods/index.html => generated 17242 bytes in 42 msecs (HTTP/1.1 200) 4 headers in 148 bytes (1 switches on core 0)
+[pid: 3086|app: 0|req: 12/44] 127.0.0.1 () {44 vars in 903 bytes} [Sat Jun 10 20:30:39 2017] GET /user/register.html/ => generated 2322 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 3087|app: 0|req: 18/45] 127.0.0.1 () {44 vars in 866 bytes} [Sat Jun 10 20:30:47 2017] GET /user/verify_name?user_name=liyan5 => generated 10 bytes in 22 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 3084|app: 0|req: 9/46] 127.0.0.1 () {44 vars in 874 bytes} [Sat Jun 10 20:30:57 2017] GET /user/verify_email?email=43gf%40qq.com => generated 10 bytes in 13 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3084|app: 0|req: 10/47] 127.0.0.1 () {44 vars in 866 bytes} [Sat Jun 10 20:30:57 2017] GET /user/verify_name?user_name=liyan5 => generated 10 bytes in 3 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 3083|app: 0|req: 8/48] 127.0.0.1 () {44 vars in 874 bytes} [Sat Jun 10 20:30:57 2017] GET /user/verify_email?email=43gf%40qq.com => generated 10 bytes in 3 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 3083|app: 0|req: 9/49] 127.0.0.1 () {52 vars in 1083 bytes} [Sat Jun 10 20:30:57 2017] POST /user/handle_register/ => generated 0 bytes in 16 msecs (HTTP/1.1 302) 3 headers in 135 bytes (1 switches on core 0)
+[pid: 3083|app: 0|req: 10/50] 127.0.0.1 () {46 vars in 929 bytes} [Sat Jun 10 20:30:57 2017] GET /user/login.html => generated 0 bytes in 1 msecs (HTTP/1.1 301) 4 headers in 193 bytes (1 switches on core 1)
+[pid: 3087|app: 0|req: 19/51] 127.0.0.1 () {46 vars in 930 bytes} [Sat Jun 10 20:30:57 2017] GET /user/login.html/ => generated 4355 bytes in 3 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3087|app: 0|req: 20/52] 127.0.0.1 () {44 vars in 862 bytes} [Sat Jun 10 20:31:01 2017] GET /user/verify_name?user_name=liyan5 => generated 10 bytes in 15 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 1)
+POST
+[pid: 3086|app: 0|req: 13/53] 127.0.0.1 () {52 vars in 1063 bytes} [Sat Jun 10 20:31:03 2017] POST /user/go_login/ => generated 0 bytes in 32 msecs (HTTP/1.1 302) 7 headers in 405 bytes (1 switches on core 0)
+[pid: 3084|app: 0|req: 11/54] 127.0.0.1 () {46 vars in 907 bytes} [Sat Jun 10 20:31:04 2017] GET /user/login.html => generated 0 bytes in 1 msecs (HTTP/1.1 301) 4 headers in 193 bytes (1 switches on core 1)
+[pid: 3086|app: 0|req: 14/55] 127.0.0.1 () {46 vars in 909 bytes} [Sat Jun 10 20:31:04 2017] GET /user/login.html/ => generated 4361 bytes in 4 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+POST
+[pid: 3086|app: 0|req: 15/56] 127.0.0.1 () {52 vars in 1045 bytes} [Sat Jun 10 20:31:08 2017] POST /user/go_login/ => generated 0 bytes in 24 msecs (HTTP/1.1 302) 7 headers in 405 bytes (1 switches on core 0)
+[pid: 3086|app: 0|req: 16/57] 127.0.0.1 () {46 vars in 907 bytes} [Sat Jun 10 20:31:08 2017] GET /user/login.html => generated 0 bytes in 2 msecs (HTTP/1.1 301) 4 headers in 193 bytes (1 switches on core 1)
+[pid: 3084|app: 0|req: 12/58] 127.0.0.1 () {46 vars in 909 bytes} [Sat Jun 10 20:31:08 2017] GET /user/login.html/ => generated 4361 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 3083|app: 0|req: 11/59] 127.0.0.1 () {44 vars in 860 bytes} [Sat Jun 10 20:31:11 2017] GET /user/login.html/ => generated 4361 bytes in 5 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 3083|app: 0|req: 12/60] 127.0.0.1 () {44 vars in 844 bytes} [Sat Jun 10 20:31:16 2017] GET /user/verify_name?user_name=liyan5 => generated 10 bytes in 3 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+POST
+[pid: 3087|app: 0|req: 21/61] 127.0.0.1 () {52 vars in 1045 bytes} [Sat Jun 10 20:31:17 2017] POST /user/go_login/ => generated 0 bytes in 33 msecs (HTTP/1.1 302) 7 headers in 405 bytes (1 switches on core 0)
+[pid: 3087|app: 0|req: 22/62] 127.0.0.1 () {46 vars in 907 bytes} [Sat Jun 10 20:31:17 2017] GET /user/login.html => generated 0 bytes in 1 msecs (HTTP/1.1 301) 4 headers in 193 bytes (1 switches on core 1)
+[pid: 3087|app: 0|req: 23/63] 127.0.0.1 () {46 vars in 909 bytes} [Sat Jun 10 20:31:17 2017] GET /user/login.html/ => generated 4361 bytes in 3 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3087|app: 0|req: 24/64] 127.0.0.1 () {44 vars in 842 bytes} [Sat Jun 10 20:31:24 2017] GET /user/verify_name?user_name=liyan => generated 10 bytes in 13 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+POST
+[pid: 3087|app: 0|req: 25/65] 127.0.0.1 () {52 vars in 1045 bytes} [Sat Jun 10 20:31:28 2017] POST /user/go_login/ => generated 0 bytes in 36 msecs (HTTP/1.1 302) 7 headers in 404 bytes (1 switches on core 1)
+[pid: 3084|app: 0|req: 13/66] 127.0.0.1 () {46 vars in 906 bytes} [Sat Jun 10 20:31:28 2017] GET /user/login.html => generated 0 bytes in 3 msecs (HTTP/1.1 301) 4 headers in 193 bytes (1 switches on core 0)
+[pid: 3084|app: 0|req: 14/67] 127.0.0.1 () {46 vars in 908 bytes} [Sat Jun 10 20:31:28 2017] GET /user/login.html/ => generated 4360 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 3083|app: 0|req: 13/68] 127.0.0.1 () {44 vars in 859 bytes} [Sat Jun 10 20:31:59 2017] GET /user/login.html/ => generated 4356 bytes in 3 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+POST
+[pid: 3087|app: 0|req: 26/69] 127.0.0.1 () {52 vars in 1044 bytes} [Sat Jun 10 20:32:02 2017] POST /user/go_login/ => generated 0 bytes in 19 msecs (HTTP/1.1 302) 7 headers in 404 bytes (1 switches on core 0)
+[pid: 3086|app: 0|req: 17/70] 127.0.0.1 () {46 vars in 906 bytes} [Sat Jun 10 20:32:02 2017] GET /user/login.html => generated 0 bytes in 1 msecs (HTTP/1.1 301) 4 headers in 193 bytes (1 switches on core 1)
+[pid: 3086|app: 0|req: 18/71] 127.0.0.1 () {46 vars in 908 bytes} [Sat Jun 10 20:32:02 2017] GET /user/login.html/ => generated 4356 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3086|app: 0|req: 19/72] 127.0.0.1 () {44 vars in 843 bytes} [Sat Jun 10 20:32:05 2017] GET /user/verify_name?user_name=liyan5 => generated 10 bytes in 17 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 1)
+POST
+[pid: 3083|app: 0|req: 14/73] 127.0.0.1 () {52 vars in 1044 bytes} [Sat Jun 10 20:32:09 2017] POST /user/go_login/ => generated 0 bytes in 29 msecs (HTTP/1.1 302) 7 headers in 405 bytes (1 switches on core 0)
+[pid: 3087|app: 0|req: 27/74] 127.0.0.1 () {46 vars in 907 bytes} [Sat Jun 10 20:32:09 2017] GET /user/login.html => generated 0 bytes in 1 msecs (HTTP/1.1 301) 4 headers in 193 bytes (1 switches on core 1)
+[pid: 3086|app: 0|req: 20/75] 127.0.0.1 () {46 vars in 909 bytes} [Sat Jun 10 20:32:09 2017] GET /user/login.html/ => generated 4357 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+POST
+[pid: 3087|app: 0|req: 28/76] 127.0.0.1 () {52 vars in 1045 bytes} [Sat Jun 10 20:32:37 2017] POST /user/go_login/ => generated 0 bytes in 35 msecs (HTTP/1.1 302) 7 headers in 405 bytes (1 switches on core 0)
+[pid: 3087|app: 0|req: 29/77] 127.0.0.1 () {46 vars in 907 bytes} [Sat Jun 10 20:32:37 2017] GET /user/login.html => generated 0 bytes in 1 msecs (HTTP/1.1 301) 4 headers in 193 bytes (1 switches on core 1)
+[pid: 3086|app: 0|req: 21/78] 127.0.0.1 () {46 vars in 909 bytes} [Sat Jun 10 20:32:37 2017] GET /user/login.html/ => generated 4357 bytes in 6 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 3087|app: 0|req: 30/79] 127.0.0.1 () {44 vars in 860 bytes} [Sat Jun 10 20:34:27 2017] GET /user/login.html/ => generated 4357 bytes in 5 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+POST
+[pid: 3086|app: 0|req: 22/80] 127.0.0.1 () {52 vars in 1045 bytes} [Sat Jun 10 20:34:31 2017] POST /user/go_login/ => generated 0 bytes in 25 msecs (HTTP/1.1 302) 7 headers in 405 bytes (1 switches on core 0)
+[pid: 3087|app: 0|req: 31/81] 127.0.0.1 () {46 vars in 907 bytes} [Sat Jun 10 20:34:31 2017] GET /user/login.html => generated 0 bytes in 1 msecs (HTTP/1.1 301) 4 headers in 193 bytes (1 switches on core 1)
+[pid: 3083|app: 0|req: 15/82] 127.0.0.1 () {46 vars in 909 bytes} [Sat Jun 10 20:34:31 2017] GET /user/login.html/ => generated 4357 bytes in 7 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 3083|app: 0|req: 16/83] 127.0.0.1 () {44 vars in 860 bytes} [Sat Jun 10 20:36:24 2017] GET /user/login.html/ => generated 4357 bytes in 5 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+POST
+[pid: 3086|app: 0|req: 23/84] 127.0.0.1 () {52 vars in 1045 bytes} [Sat Jun 10 20:36:30 2017] POST /user/go_login/ => generated 0 bytes in 44 msecs (HTTP/1.1 302) 7 headers in 405 bytes (1 switches on core 1)
+[pid: 3084|app: 0|req: 15/85] 127.0.0.1 () {46 vars in 907 bytes} [Sat Jun 10 20:36:30 2017] GET /user/login.html => generated 0 bytes in 2 msecs (HTTP/1.1 301) 4 headers in 193 bytes (1 switches on core 0)
+[pid: 3087|app: 0|req: 32/86] 127.0.0.1 () {46 vars in 909 bytes} [Sat Jun 10 20:36:30 2017] GET /user/login.html/ => generated 4357 bytes in 8 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3084|app: 0|req: 16/87] 127.0.0.1 () {44 vars in 860 bytes} [Sat Jun 10 20:40:05 2017] GET /user/login.html/ => generated 4357 bytes in 8 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+POST
+[pid: 3087|app: 0|req: 33/88] 127.0.0.1 () {52 vars in 1045 bytes} [Sat Jun 10 20:40:12 2017] POST /user/go_login/ => generated 0 bytes in 20 msecs (HTTP/1.1 302) 7 headers in 405 bytes (1 switches on core 1)
+[pid: 3084|app: 0|req: 17/89] 127.0.0.1 () {46 vars in 907 bytes} [Sat Jun 10 20:40:12 2017] GET /user/login.html => generated 0 bytes in 1 msecs (HTTP/1.1 301) 4 headers in 193 bytes (1 switches on core 1)
+[pid: 3087|app: 0|req: 34/90] 127.0.0.1 () {46 vars in 909 bytes} [Sat Jun 10 20:40:13 2017] GET /user/login.html/ => generated 4357 bytes in 3 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3086|app: 0|req: 24/91] 127.0.0.1 () {44 vars in 860 bytes} [Sat Jun 10 20:41:19 2017] GET /user/login.html/ => generated 4357 bytes in 4 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+POST
+[pid: 3086|app: 0|req: 25/92] 127.0.0.1 () {52 vars in 1045 bytes} [Sat Jun 10 20:41:23 2017] POST /user/go_login/ => generated 0 bytes in 24 msecs (HTTP/1.1 302) 7 headers in 405 bytes (1 switches on core 1)
+[pid: 3087|app: 0|req: 35/93] 127.0.0.1 () {46 vars in 907 bytes} [Sat Jun 10 20:41:23 2017] GET /user/login.html => generated 0 bytes in 4 msecs (HTTP/1.1 301) 4 headers in 193 bytes (1 switches on core 1)
+[pid: 3087|app: 0|req: 36/94] 127.0.0.1 () {46 vars in 909 bytes} [Sat Jun 10 20:41:23 2017] GET /user/login.html/ => generated 4357 bytes in 6 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3083|app: 0|req: 17/95] 127.0.0.1 () {44 vars in 860 bytes} [Sat Jun 10 20:41:38 2017] GET /user/login.html/ => generated 4357 bytes in 7 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 3087|app: 0|req: 37/96] 127.0.0.1 () {44 vars in 860 bytes} [Sat Jun 10 20:42:28 2017] GET /user/login.html/ => generated 4357 bytes in 4 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+POST
+[pid: 3086|app: 0|req: 26/97] 127.0.0.1 () {52 vars in 1045 bytes} [Sat Jun 10 20:42:32 2017] POST /user/go_login/ => generated 0 bytes in 33 msecs (HTTP/1.1 302) 7 headers in 405 bytes (1 switches on core 0)
+[pid: 3083|app: 0|req: 18/98] 127.0.0.1 () {46 vars in 907 bytes} [Sat Jun 10 20:42:32 2017] GET /user/login.html => generated 0 bytes in 1 msecs (HTTP/1.1 301) 4 headers in 193 bytes (1 switches on core 0)
+[pid: 3086|app: 0|req: 27/99] 127.0.0.1 () {46 vars in 909 bytes} [Sat Jun 10 20:42:32 2017] GET /user/login.html/ => generated 4357 bytes in 3 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 3084|app: 0|req: 18/100] 127.0.0.1 () {42 vars in 797 bytes} [Sat Jun 10 20:42:38 2017] GET / => generated 17254 bytes in 38 msecs (HTTP/1.1 200) 4 headers in 132 bytes (1 switches on core 1)
+[pid: 3086|app: 0|req: 28/101] 127.0.0.1 () {44 vars in 839 bytes} [Sat Jun 10 20:42:44 2017] GET /user/logout/ => generated 0 bytes in 18 msecs (HTTP/1.1 302) 5 headers in 281 bytes (1 switches on core 0)
+[pid: 3083|app: 0|req: 19/102] 127.0.0.1 () {44 vars in 847 bytes} [Sat Jun 10 20:42:44 2017] GET /goods/index.html => generated 17242 bytes in 54 msecs (HTTP/1.1 200) 4 headers in 148 bytes (1 switches on core 1)
+[pid: 3086|app: 0|req: 29/103] 127.0.0.1 () {44 vars in 879 bytes} [Sat Jun 10 20:42:45 2017] GET /user/login.html/ => generated 4357 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+POST
+[pid: 3087|app: 0|req: 38/104] 127.0.0.1 () {52 vars in 1046 bytes} [Sat Jun 10 20:42:49 2017] POST /user/go_login/ => generated 0 bytes in 27 msecs (HTTP/1.1 302) 7 headers in 406 bytes (1 switches on core 0)
+[pid: 3087|app: 0|req: 39/105] 127.0.0.1 () {46 vars in 910 bytes} [Sat Jun 10 20:42:49 2017] GET /goods/index.html => generated 17254 bytes in 42 msecs (HTTP/1.1 200) 4 headers in 148 bytes (1 switches on core 1)
+[pid: 3087|app: 0|req: 40/106] 127.0.0.1 () {44 vars in 871 bytes} [Sat Jun 10 20:42:52 2017] GET /user/logout/ => generated 0 bytes in 16 msecs (HTTP/1.1 302) 5 headers in 281 bytes (1 switches on core 0)
+[pid: 3087|app: 0|req: 41/107] 127.0.0.1 () {44 vars in 879 bytes} [Sat Jun 10 20:42:52 2017] GET /goods/index.html => generated 17242 bytes in 40 msecs (HTTP/1.1 200) 4 headers in 148 bytes (1 switches on core 1)
+[pid: 3086|app: 0|req: 30/108] 127.0.0.1 () {44 vars in 885 bytes} [Sat Jun 10 20:42:53 2017] GET /user/register.html/ => generated 2322 bytes in 8 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3086|app: 0|req: 31/109] 127.0.0.1 () {44 vars in 848 bytes} [Sat Jun 10 20:42:57 2017] GET /user/verify_name?user_name=liyan7 => generated 10 bytes in 8 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 3083|app: 0|req: 20/110] 127.0.0.1 () {44 vars in 858 bytes} [Sat Jun 10 20:43:07 2017] GET /user/verify_email?email=fdg43%40qq.com => generated 10 bytes in 11 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3084|app: 0|req: 19/111] 127.0.0.1 () {44 vars in 848 bytes} [Sat Jun 10 20:43:07 2017] GET /user/verify_name?user_name=liyan7 => generated 10 bytes in 11 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3083|app: 0|req: 21/112] 127.0.0.1 () {44 vars in 858 bytes} [Sat Jun 10 20:43:07 2017] GET /user/verify_email?email=fdg43%40qq.com => generated 10 bytes in 12 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 3087|app: 0|req: 42/113] 127.0.0.1 () {52 vars in 1065 bytes} [Sat Jun 10 20:43:07 2017] POST /user/handle_register/ => generated 0 bytes in 19 msecs (HTTP/1.1 302) 3 headers in 135 bytes (1 switches on core 0)
+[pid: 3084|app: 0|req: 20/114] 127.0.0.1 () {46 vars in 911 bytes} [Sat Jun 10 20:43:07 2017] GET /user/login.html => generated 0 bytes in 5 msecs (HTTP/1.1 301) 4 headers in 193 bytes (1 switches on core 1)
+[pid: 3086|app: 0|req: 32/115] 127.0.0.1 () {46 vars in 912 bytes} [Sat Jun 10 20:43:07 2017] GET /user/login.html/ => generated 4357 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3086|app: 0|req: 33/116] 127.0.0.1 () {44 vars in 844 bytes} [Sat Jun 10 20:43:12 2017] GET /user/verify_name?user_name=liyan7 => generated 10 bytes in 13 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 1)
+POST
+[pid: 3087|app: 0|req: 43/117] 127.0.0.1 () {52 vars in 1045 bytes} [Sat Jun 10 20:43:15 2017] POST /user/go_login/ => generated 0 bytes in 27 msecs (HTTP/1.1 302) 7 headers in 405 bytes (1 switches on core 1)
+[pid: 3087|app: 0|req: 44/118] 127.0.0.1 () {46 vars in 907 bytes} [Sat Jun 10 20:43:15 2017] GET /user/login.html => generated 0 bytes in 1 msecs (HTTP/1.1 301) 4 headers in 193 bytes (1 switches on core 0)
+[pid: 3086|app: 0|req: 34/119] 127.0.0.1 () {46 vars in 909 bytes} [Sat Jun 10 20:43:15 2017] GET /user/login.html/ => generated 4357 bytes in 4 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+POST
+[pid: 3086|app: 0|req: 35/120] 127.0.0.1 () {52 vars in 1045 bytes} [Sat Jun 10 20:43:19 2017] POST /user/go_login/ => generated 0 bytes in 33 msecs (HTTP/1.1 302) 7 headers in 405 bytes (1 switches on core 0)
+[pid: 3087|app: 0|req: 45/121] 127.0.0.1 () {46 vars in 907 bytes} [Sat Jun 10 20:43:19 2017] GET /user/login.html => generated 0 bytes in 1 msecs (HTTP/1.1 301) 4 headers in 193 bytes (1 switches on core 1)
+[pid: 3086|app: 0|req: 36/122] 127.0.0.1 () {46 vars in 909 bytes} [Sat Jun 10 20:43:19 2017] GET /user/login.html/ => generated 4357 bytes in 4 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 3087|app: 0|req: 46/123] 127.0.0.1 () {44 vars in 860 bytes} [Sat Jun 10 20:44:08 2017] GET /user/login.html/ => generated 4357 bytes in 4 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+POST
+[pid: 3087|app: 0|req: 47/124] 127.0.0.1 () {52 vars in 1045 bytes} [Sat Jun 10 20:44:14 2017] POST /user/go_login/ => generated 0 bytes in 40 msecs (HTTP/1.1 302) 7 headers in 405 bytes (1 switches on core 1)
+[pid: 3087|app: 0|req: 48/125] 127.0.0.1 () {46 vars in 907 bytes} [Sat Jun 10 20:44:14 2017] GET /user/login.html => generated 0 bytes in 5 msecs (HTTP/1.1 301) 4 headers in 193 bytes (1 switches on core 0)
+[pid: 3087|app: 0|req: 49/126] 127.0.0.1 () {46 vars in 909 bytes} [Sat Jun 10 20:44:14 2017] GET /user/login.html/ => generated 4357 bytes in 8 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 3084|app: 0|req: 21/127] 127.0.0.1 () {42 vars in 806 bytes} [Sat Jun 10 20:48:45 2017] GET / => generated 17254 bytes in 31 msecs (HTTP/1.1 200) 4 headers in 132 bytes (1 switches on core 0)
+[pid: 3086|app: 0|req: 37/128] 127.0.0.1 () {44 vars in 839 bytes} [Sat Jun 10 20:48:47 2017] GET /user/logout/ => generated 0 bytes in 29 msecs (HTTP/1.1 302) 5 headers in 281 bytes (1 switches on core 0)
+[pid: 3087|app: 0|req: 50/129] 127.0.0.1 () {44 vars in 847 bytes} [Sat Jun 10 20:48:47 2017] GET /goods/index.html => generated 17242 bytes in 52 msecs (HTTP/1.1 200) 4 headers in 148 bytes (1 switches on core 0)
+[pid: 3087|app: 0|req: 51/130] 127.0.0.1 () {44 vars in 861 bytes} [Sat Jun 10 20:48:49 2017] GET /goods/index.html => generated 17242 bytes in 38 msecs (HTTP/1.1 200) 4 headers in 148 bytes (1 switches on core 1)
+[pid: 3086|app: 0|req: 38/131] 127.0.0.1 () {44 vars in 885 bytes} [Sat Jun 10 20:48:50 2017] GET /user/register.html/ => generated 2322 bytes in 9 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 3084|app: 0|req: 22/132] 127.0.0.1 () {44 vars in 848 bytes} [Sat Jun 10 20:48:56 2017] GET /user/verify_name?user_name=liyan9 => generated 10 bytes in 4 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 3083|app: 0|req: 22/133] 127.0.0.1 () {44 vars in 882 bytes} [Sat Jun 10 20:48:58 2017] GET /user/login.html/ => generated 4357 bytes in 8 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3087|app: 0|req: 52/134] 127.0.0.1 () {44 vars in 845 bytes} [Sat Jun 10 20:49:00 2017] GET /user/verify_name?user_name=liyan7 => generated 10 bytes in 11 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+POST
+[pid: 3087|app: 0|req: 53/135] 127.0.0.1 () {52 vars in 1046 bytes} [Sat Jun 10 20:49:02 2017] POST /user/go_login/ => generated 0 bytes in 30 msecs (HTTP/1.1 302) 7 headers in 406 bytes (1 switches on core 1)
+[pid: 3087|app: 0|req: 54/136] 127.0.0.1 () {46 vars in 910 bytes} [Sat Jun 10 20:49:02 2017] GET /goods/index.html => generated 17254 bytes in 51 msecs (HTTP/1.1 200) 4 headers in 148 bytes (1 switches on core 0)
+[pid: 3086|app: 0|req: 39/137] 127.0.0.1 () {44 vars in 871 bytes} [Sat Jun 10 20:49:05 2017] GET /user/logout/ => generated 0 bytes in 24 msecs (HTTP/1.1 302) 5 headers in 281 bytes (1 switches on core 0)
+[pid: 3084|app: 0|req: 23/138] 127.0.0.1 () {44 vars in 879 bytes} [Sat Jun 10 20:49:05 2017] GET /goods/index.html => generated 17242 bytes in 37 msecs (HTTP/1.1 200) 4 headers in 148 bytes (1 switches on core 0)
+[pid: 3087|app: 0|req: 55/139] 127.0.0.1 () {44 vars in 879 bytes} [Sat Jun 10 20:49:07 2017] GET /user/login.html/ => generated 4357 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 3084|app: 0|req: 24/140] 127.0.0.1 () {44 vars in 885 bytes} [Sat Jun 10 20:49:09 2017] GET /user/register.html/ => generated 2322 bytes in 9 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 3083|app: 0|req: 23/141] 127.0.0.1 () {44 vars in 848 bytes} [Sat Jun 10 20:49:12 2017] GET /user/verify_name?user_name=liyan9 => generated 10 bytes in 11 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 3086|app: 0|req: 40/142] 127.0.0.1 () {44 vars in 850 bytes} [Sat Jun 10 20:49:17 2017] GET /user/verify_name?user_name=liyan90 => generated 10 bytes in 13 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 3087|app: 0|req: 56/143] 127.0.0.1 () {44 vars in 858 bytes} [Sat Jun 10 20:49:24 2017] GET /user/verify_email?email=24444%40qq.com => generated 10 bytes in 10 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3087|app: 0|req: 57/144] 127.0.0.1 () {44 vars in 850 bytes} [Sat Jun 10 20:49:25 2017] GET /user/verify_name?user_name=liyan90 => generated 10 bytes in 11 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 3083|app: 0|req: 24/145] 127.0.0.1 () {44 vars in 858 bytes} [Sat Jun 10 20:49:25 2017] GET /user/verify_email?email=24444%40qq.com => generated 10 bytes in 9 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3083|app: 0|req: 25/146] 127.0.0.1 () {52 vars in 1065 bytes} [Sat Jun 10 20:49:25 2017] POST /user/handle_register/ => generated 0 bytes in 20 msecs (HTTP/1.1 302) 3 headers in 135 bytes (1 switches on core 1)
+[pid: 3087|app: 0|req: 58/147] 127.0.0.1 () {46 vars in 911 bytes} [Sat Jun 10 20:49:25 2017] GET /user/login.html => generated 0 bytes in 4 msecs (HTTP/1.1 301) 4 headers in 193 bytes (1 switches on core 0)
+[pid: 3086|app: 0|req: 41/148] 127.0.0.1 () {46 vars in 912 bytes} [Sat Jun 10 20:49:25 2017] GET /user/login.html/ => generated 4357 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3084|app: 0|req: 25/149] 127.0.0.1 () {44 vars in 846 bytes} [Sat Jun 10 20:49:28 2017] GET /user/verify_name?user_name=liyan90 => generated 10 bytes in 10 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+POST
+[pid: 3087|app: 0|req: 59/150] 127.0.0.1 () {52 vars in 1045 bytes} [Sat Jun 10 20:49:31 2017] POST /user/go_login/ => generated 0 bytes in 30 msecs (HTTP/1.1 302) 7 headers in 406 bytes (1 switches on core 1)
+[pid: 3084|app: 0|req: 26/151] 127.0.0.1 () {46 vars in 908 bytes} [Sat Jun 10 20:49:31 2017] GET /user/login.html => generated 0 bytes in 1 msecs (HTTP/1.1 301) 4 headers in 193 bytes (1 switches on core 1)
+[pid: 3084|app: 0|req: 27/152] 127.0.0.1 () {46 vars in 910 bytes} [Sat Jun 10 20:49:31 2017] GET /user/login.html/ => generated 4358 bytes in 4 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+POST
+[pid: 3086|app: 0|req: 42/153] 127.0.0.1 () {52 vars in 1046 bytes} [Sat Jun 10 20:49:52 2017] POST /user/go_login/ => generated 0 bytes in 28 msecs (HTTP/1.1 302) 7 headers in 406 bytes (1 switches on core 1)
+[pid: 3086|app: 0|req: 43/154] 127.0.0.1 () {46 vars in 908 bytes} [Sat Jun 10 20:49:52 2017] GET /user/login.html => generated 0 bytes in 1 msecs (HTTP/1.1 301) 4 headers in 193 bytes (1 switches on core 0)
+[pid: 3086|app: 0|req: 44/155] 127.0.0.1 () {46 vars in 910 bytes} [Sat Jun 10 20:49:52 2017] GET /user/login.html/ => generated 4358 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 3084|app: 0|req: 28/156] 127.0.0.1 () {42 vars in 798 bytes} [Sat Jun 10 20:51:13 2017] GET / => generated 17256 bytes in 37 msecs (HTTP/1.1 200) 4 headers in 132 bytes (1 switches on core 1)
+[pid: 3086|app: 0|req: 45/157] 127.0.0.1 () {44 vars in 846 bytes} [Sat Jun 10 20:54:05 2017] GET /user/login.html/ => generated 4345 bytes in 3 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+POST
+[pid: 3087|app: 0|req: 60/158] 127.0.0.1 () {52 vars in 1031 bytes} [Sat Jun 10 20:54:09 2017] POST /user/go_login/ => generated 0 bytes in 27 msecs (HTTP/1.1 302) 7 headers in 391 bytes (1 switches on core 1)
+[pid: 3083|app: 0|req: 26/159] 127.0.0.1 () {46 vars in 863 bytes} [Sat Jun 10 20:54:09 2017] GET / => generated 17256 bytes in 42 msecs (HTTP/1.1 200) 4 headers in 132 bytes (1 switches on core 0)
+[pid: 3086|app: 0|req: 46/160] 127.0.0.1 () {44 vars in 840 bytes} [Sat Jun 10 20:54:14 2017] GET /user/logout/ => generated 0 bytes in 18 msecs (HTTP/1.1 302) 5 headers in 281 bytes (1 switches on core 1)
+[pid: 3086|app: 0|req: 47/161] 127.0.0.1 () {44 vars in 848 bytes} [Sat Jun 10 20:54:14 2017] GET /goods/index.html => generated 17242 bytes in 64 msecs (HTTP/1.1 200) 4 headers in 148 bytes (1 switches on core 0)
+[pid: 3087|app: 0|req: 61/162] 127.0.0.1 () {44 vars in 886 bytes} [Sat Jun 10 20:54:15 2017] GET /user/register.html/ => generated 2322 bytes in 3 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 3083|app: 0|req: 27/163] 127.0.0.1 () {44 vars in 849 bytes} [Sat Jun 10 20:54:20 2017] GET /user/verify_name?user_name=123456 => generated 10 bytes in 11 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 3084|app: 0|req: 29/164] 127.0.0.1 () {44 vars in 861 bytes} [Sat Jun 10 20:54:32 2017] GET /user/verify_email?email=123456%40qq.com => generated 10 bytes in 8 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 3084|app: 0|req: 30/165] 127.0.0.1 () {44 vars in 849 bytes} [Sat Jun 10 20:54:32 2017] GET /user/verify_name?user_name=123456 => generated 10 bytes in 6 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 3086|app: 0|req: 48/166] 127.0.0.1 () {44 vars in 861 bytes} [Sat Jun 10 20:54:32 2017] GET /user/verify_email?email=123456%40qq.com => generated 10 bytes in 3 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 3084|app: 0|req: 31/167] 127.0.0.1 () {52 vars in 1066 bytes} [Sat Jun 10 20:54:32 2017] POST /user/handle_register/ => generated 0 bytes in 12 msecs (HTTP/1.1 302) 3 headers in 135 bytes (1 switches on core 1)
+[pid: 3087|app: 0|req: 62/168] 127.0.0.1 () {46 vars in 912 bytes} [Sat Jun 10 20:54:32 2017] GET /user/login.html => generated 0 bytes in 4 msecs (HTTP/1.1 301) 4 headers in 193 bytes (1 switches on core 0)
+[pid: 3087|app: 0|req: 63/169] 127.0.0.1 () {46 vars in 913 bytes} [Sat Jun 10 20:54:32 2017] GET /user/login.html/ => generated 4345 bytes in 3 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 3086|app: 0|req: 49/170] 127.0.0.1 () {44 vars in 845 bytes} [Sat Jun 10 20:54:37 2017] GET /user/verify_name?user_name=123456 => generated 10 bytes in 13 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+POST
+[pid: 3087|app: 0|req: 64/171] 127.0.0.1 () {52 vars in 1046 bytes} [Sat Jun 10 20:54:40 2017] POST /user/go_login/ => generated 0 bytes in 23 msecs (HTTP/1.1 302) 7 headers in 405 bytes (1 switches on core 1)
+[pid: 3086|app: 0|req: 50/172] 127.0.0.1 () {46 vars in 907 bytes} [Sat Jun 10 20:54:40 2017] GET /user/login.html => generated 0 bytes in 2 msecs (HTTP/1.1 301) 4 headers in 193 bytes (1 switches on core 1)
+[pid: 3087|app: 0|req: 65/173] 127.0.0.1 () {46 vars in 909 bytes} [Sat Jun 10 20:54:40 2017] GET /user/login.html/ => generated 4344 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+POST
+[pid: 3083|app: 0|req: 28/174] 127.0.0.1 () {52 vars in 1045 bytes} [Sat Jun 10 20:55:07 2017] POST /user/go_login/ => generated 4352 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+...brutally killing workers...
+worker 2 buried after 0 seconds
+worker 3 buried after 0 seconds
+worker 4 buried after 0 seconds
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/liyan/DailyFresh/fresh
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (127.0.0.1:8080)
+running /home/liyan/.virtualenvs/dailyFresh/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.15 (64bit) on [Sat Jun 10 20:58:17 2017] ***
+compiled with version: 4.8.4 on 09 June 2017 11:43:53
+os: Linux-4.4.0-31-generic #50~14.04.1-Ubuntu SMP Wed Jul 13 01:07:32 UTC 2016
+nodename: liyan-TM1613
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/liyan/DailyFresh/fresh
+detected binary path: /home/liyan/.virtualenvs/dailyFresh/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/liyan/DailyFresh/fresh
+your processes number limit is 31164
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 127.0.0.1:8080 fd 3
+Python version: 2.7.6 (default, Oct 26 2016, 20:33:43)  [GCC 4.8.4]
+Python main interpreter initialized at 0x23ed980
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415280 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x23ed980 pid: 3080 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 3080)
+spawned uWSGI worker 1 (pid: 6529, cores: 2)
+spawned uWSGI worker 2 (pid: 6530, cores: 2)
+spawned uWSGI worker 3 (pid: 6532, cores: 2)
+spawned uWSGI worker 4 (pid: 6534, cores: 2)

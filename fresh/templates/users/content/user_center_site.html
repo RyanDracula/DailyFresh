@@ -3,58 +3,30 @@
     <title>天天生鲜-用户中心</title>
     <script>
     $(function () {
-        var person = false;
-        var addr = false;
-        var tele = false;
-        $('#recv_person').blur(function() {
-            check_person_empty();
-        });
-        $('#recv_addr').blur(function () {
-            check_addr_empty();
-        });
-        $('#recv_tele').blur(function () {
-            check_tele_empty();
-        });
+        var person = true;
+        var addr = true;
+        var tele = true;
+        var flag = false;
+{#        判断一开始页面内是否有内容#}
+        if ('{{ addrinfo|default:'' }}' !== ''){
+            flag = true;
+        }
 {#        判断收件人是否为空#}
-        function check_person_empty() {
-            if($('#recv_person').val().length == 0){
-                person = false;
-            }
-            else{
-                person = true;
-            }
-        }
+        $('#recv_person').blur(function() {
+            person = $('#recv_person').val().length !== 0;
+        });
 {#        判断地址是否为空#}
-        function check_addr_empty() {
-            if($('#recv_addr').length == 0){
-                addr = false;
-            }
-            else{
-                addr = true;
-            }
-        }
+        $('#recv_addr').blur(function () {
+            addr = $('#recv_addr').val().length !== 0;
+        });
 {#        判断电话是否为空#}
-        function check_tele_empty() {
-            if($('#recv_tele').val().length == 0){
-                tele = false;
-            }
-            else{
-                tele = true;
-            }
-        }
+        $('#recv_tele').blur(function () {
+            tele = $('#recv_tele').val().length !== 0;
+        });
 
-        if("{{ recv_address }}" && "{{ addrinfo.person }}" && "{{ addrinfo.tel }}" && "{{ addrinfo.youbian }}"){
-            $('#recv_person').val("{{ addrinfo.person }}");
-            $('#recv_addr').val("{{ addrinfo.addr }}");
-            $('#youbian').val("{{ addrinfo.youbian }}");
-            $('#recv_tele').val("{{ addrinfo.tel }}");
-            person = true;
-            addr = true;
-            tele = true;
-        }
 {#      收件人，地址，电话都不为空时，才能提交#}
         $('#can_click').submit(function () {
-            return (person==true && addr==true && tele==true);
+            return (person===true && addr===true && tele===true && flag===true);
         })
     })
     </script>

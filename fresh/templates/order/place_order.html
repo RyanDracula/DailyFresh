@@ -12,7 +12,7 @@
             {#        计算小计#}
             var smallTotal = (parseInt(num) * parseFloat(price)).toFixed(2);
             col07.text(smallTotal);
-            {#          计算被选中的商品的总价#}
+            {#          计算商品的总价#}
             totalPrice = (parseFloat(totalPrice) + parseFloat(col07.text())).toFixed(2);
         });
         $('.total_goods_count b').text(totalPrice);

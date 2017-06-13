@@ -32,24 +32,103 @@
 
     $(function () {
 
-        {#      刚进入页面，就开始计算所有的价格 #}
+{#      刚进入页面，就开始计算所有的价格 #}
         calc();
-
+        {#        全选或全不选#}
+        {#        $("#CheckedAll").click(function(){#}
+        {#            if(this.checked){#}
+        {#                $('[name=items]:checkbox').prop("checked", true);#}
+        {#            }#}
+        {#            else{#}
+        {#            $('[name=items]:checkbox').prop("checked", false);#}
+        {#            }#}
+        {#        });#}
+{#        全选/全消功能#}
         $('#CheckedAll').click(function () {
             $(':checkbox:not(#check_all)').prop('checked', $(this).prop('checked'));
         });
 
-        {#        当页面上商品的checkbox全部选中时，自动选中“全选”；只要有一个不被选中，“全选”就不勾选#}
-        {#        除全选框之外，其余框被change时都触发函数#}
+{#        当页面上商品的checkbox全部选中时，自动选中“全选”；只要有一个不被选中，“全选”就不勾选#}
+{#        除全选框之外，其余框被change时都触发函数#}
         $(':checkbox:not(#CheckedAll)').change(function () {
             calc();
             {#            如果所有(除全选框外)checkbox都被选中#}
             if ($(':checkbox:not(#CheckedAll)').length === $(':checked:not(#CheckedAll)').length) {
                 $('#CheckedAll').prop('checked', true);
             } else {
-                $('#checkedall').prop('checked', false);
+                $('#CheckedAll').prop('checked', false);
             }
         });
+
+        	{#            下面这段代码被丢弃了#}
+        {#          　每点击一次+号，只计算此商品的小计和总价（不必计算每个商品的小计）。#}
+        {#            但这样写代码冗余，易读性差。JS在浏览器内运行，暂不考虑其性能。所以改进版直接调用calc()方法。 #}
+
+        {#            点击加号时，数据库中数量+1，数量小计+，如果被选中了（总价增加）#}
+        {#        $('.add').click(function () {#}
+        {#            var show_goodsID = $(this).siblings("#show_goodsID").val();#}
+        {#            var num_show = $(this).next();#}
+        {#            var h = parseInt(num_show.val()) + 1;#}
+        {#            var col07 = $(this).parent().parent().siblings('.col07');#}
+        {#            var col05 = $(this).parent().parent().siblings('.col05');#}
+        {#            num_show.val(h);#}
+        {#            var smallTotal = (parseFloat(col07.text()) + parseFloat(col05.text())).toFixed(2);#}
+        {#            col07.text(smallTotal);#}
+        {#            var totalPrice = $('.settlements .col03 em');#}
+        {#            totalPrice.text((parseFloat(totalPrice.text()) + parseFloat(col05.text())).toFixed(2));#}
+        {#            $.get('/user/add_minus'+show_goodsID+'/00', function (data) {#}
+        {#            });#}
+        {#        });#}
+
+
+        {#        下面是改进版#}
+        {#        但这段代码也被丢弃了。#}
+        {#        因为每次点击加号/减号/改数量时，要重复检查是否大于库存/是否小于１，又造成了代码冗余#}
+        {#        于是有了更好的方法。将判断的条件封装一下，不同逻辑的代码再单独写#}
+        {#             点击加号时，+1#}
+        {#        $('.add').click(function () {#}
+        {#            var num_show = $(this).#click_IDnext();#}
+        {#            var kucun = $(this).parent().parent().prevAll('.col03').children('b').text();#}
+        {#            if (num_show.val() > kucun){#}
+        {#                num_show.val(kucun);#}
+        {#            }#}
+        {#            else{#}
+        {#                var h = parseInt(num_show.val()) + 1;#}
+        {#                num_show.val(h);#}
+        {#            }#}
+        {#            calc();#}
+        {#        });#}
+        {##}
+        {#            点击减号时，-１#}
+        {#        $('.minus').click(function () {#}
+        {#            var num_show = $(this).prev();#}
+        {##}
+        {#            if (num_show.val() <= 1){#}
+        {#                num_show.val(1);#}
+        {#            }else{#}
+        {#                var h = num_show.val() - 1;#}
+        {#                num_show.val(h);#}
+        {#            }#}
+        {#            calc();#}
+        {##}
+        {#        });#}
+        {##}
+        {#            输入完具体数量时 #}
+        {#        $('.num_show').blur(function () {#}
+        {#            var kucun = $(this).parent().parent().prevAll('.col03').children('b').text();#}
+        {#            格式化为整数#}
+        {#            $(this).val(parseInt($(this).val()));#}
+        {#            不能大于库存#}
+        {#            if ($(this).val() > kucun){#}
+        {#                $(this).val(kucun);#}
+        {#            }#}
+        {#            不能小于１#}
+        {#            if ($(this).val() <= 1){#}
+        {#                $(this).val(1);#}
+        {#            }#}
+        {#            calc();#}
+        {#        });#}
+
 
         {#        注意下面blur()的用法，blur()中的$(this)是$('.num_show')标签； 在$('.add')调用blur()时，取到的也是$('.num_show')标签#}
         $('.add').click(function () {

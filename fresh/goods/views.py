@@ -50,10 +50,10 @@ def detail(request, gid):
         # 最新发布的两条商品信息
         newest = GoodsInfo.objects.filter(gtype_id=int(typeobj.id)).order_by('-id')[0:2]
         # 构造返回的数据
-        response = render(request, 'goods/detail.html', {'goodsInfo': goodslist[0], 'typeobj': typeobj,
-                                                         'newest': newest, 'user_name': user_name, 'cart_count': cart_count(request)})
+        response = render(request, 'goods/detail.html', {'goodsInfo': goodslist[0], 'typeobj': typeobj,'newest': newest,
+                                                         'user_name': user_name, 'cart_count': cart_count(request)})
         previous = request.COOKIES.get('recentlysee', '')
-        # 如果此cookie已经存在，就修改此内容
+        # 将最近浏览信息放进cookie中。如果cookie已经存在，就修改此内容
         if previous:
             previous = previous.split(',')
             # 如果此元素已经出现过，就将原来的记录删除
@@ -96,13 +96,14 @@ def lists(request, tid, page_id, order_id):
     # page1传递本页商品/分页信息，tid传递此分类id，page_id传递此页数，count_pages传递总页数，plist传递页数(列表)，
     # ordeby传递根据此条件排序，newest传递最新的两条商品信息
     return render(request, 'goods/list.html',
-                  {'page1': page1, 'tid': int(tid), 'page_id': page_id, 'count_pages': count_pages,'cart_count': cart_count(request),
+                  {'page1': page1, 'tid': int(tid), 'page_id': page_id, 'count_pages': count_pages, 'cart_count': cart_count(request),
                    'plist': plist, 'orderby': orderby, 'newest': newest, 'type_obj': type_obj, 'user_name': user_name})
 
 
 from haystack.views import SearchView
 
 
+# 进行全文检索，自定义传递的上下文
 class MySearchView(SearchView):
     def extra_context(self):
         extra = super(MySearchView, self).extra_context()

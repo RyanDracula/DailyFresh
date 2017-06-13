@@ -2,40 +2,6 @@
 {%block head_set%}
     <title>天天生鲜-商品详情</title>
     <script>
-    $(function () {
-        var num_show = $('.num_show');
-        var value = num_show.val();
-{#        当总价/数量失去焦点时，或点击+,-号时，都要对总价进行计算#}
-        $('.total em').blur(function () {
-            count_prices();
-        });
-        num_show.blur(function () {
-            if (typeof Number(value) === 'number' && value%1 === 0 && value >= 1){
-            }
-            else{
-                num_show.val(1);
-            }
-            count_prices();
-        });
-        $('.minus').click(function () {
-            if (value <= 1){
-                num_show.val(1);
-            }
-            else{
-                num_show.val(parseInt(value) - 1);
-            }
-            count_prices();
-        });
-        $('.add').click(function () {
-            if (value >= parseInt({{ goodsInfo.gkucun }})){
-                num_show.val(parseInt({{ goodsInfo.gkucun }}));
-            }
-            else{
-                num_show.val(parseInt(value) + 1);
-            }
-            count_prices();
-        });
-    });
     function count_prices() {
 {#        数量#}
         var num = $('.num_show');
@@ -43,16 +9,37 @@
         var price = $('.show_pirze em');
 {#        总价#}
         var total = $('.total em');
+{#        数量不能小于１#}
         if (num.val() <= 1){
             num.val(1);
         }
+{#        数量不能大于库存#}
         if (num.val() >= parseInt({{ goodsInfo.gkucun }})){
             num.val(parseInt({{ goodsInfo.gkucun }}));
         }
 {#        计算总价，并保留两位小数#}
         total.val((parseInt(num.val()) * parseFloat(price.html())).toFixed(2));
-        total.html((parseInt(num.val()) * parseFloat(price.html())).toFixed(2));
+        total.text((parseInt(num.val()) * parseFloat(price.html())).toFixed(2));
     }
+    $(function () {
+        var num_show = $('.num_show');
+{#        当总价/数量失去焦点时，或点击+,-号时，都要对总价进行计算#}
+        $('.total em').blur(function () {
+            count_prices();
+        });
+        num_show.blur(function () {
+            num_show.val(parseInt(num_show.val()));
+            count_prices();
+        });
+        $('.minus').click(function () {
+            num_show.val(parseInt(num_show.val()) - 1);
+            count_prices();
+        });
+        $('.add').click(function () {
+            num_show.val(parseInt(num_show.val()) + 1);
+            count_prices();
+        });
+    });
     </script>
 {%endblock head_set%}
 

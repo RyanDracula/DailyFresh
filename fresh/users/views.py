@@ -64,7 +64,7 @@ def go_login(request):
                 else:
                     response = HttpResponseRedirect('/goods/index.html')
                 # 清除以前的cookie（其他用户登录时的最近浏览信息）
-                response.set_cookie('recentlysee', '', max_age=-1)
+                # response.set_cookie('recentlysee', '', max_age=-1)
                 # 如果用户选择记住用户名
                 if checked:
                     # 将用户名写入浏览器cookie，下次登录时记住用户名
@@ -154,9 +154,9 @@ def get_site(request):
     telephone = go.get('telephone')
     uid = request.session.get('user_id', "")
     if uid:
-        # 如果收货地址存在，更新此地址
         myAddr = AdrressInfo.objects.filter(user_id=uid)
         if myAddr:
+            # 如果收货地址存在，更新此地址
             myAddr.update(person=recv_people, addr=recv_address, youbian=youbian, tel=telephone, user_id=uid)
         else:
             AdrressInfo.objects.create(person=recv_people, addr=recv_address, youbian=youbian, tel=telephone, user_id=uid)
